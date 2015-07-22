@@ -2,13 +2,13 @@ var express = require('express');
 var router = express.Router();
 var elasticsearch = require('elasticsearch');
 var client = new elasticsearch.Client({
-	host: 'http://techulus.cloudapp.net:9200',
+	host: 'localhost:9200',
 	log: 'trace'
 });
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Todo App' });
+  res.render('index', { title: 'ElasticSearch :)', msg : 'An elasticsearch client using Express.js for Node' });
 });
 
 router.get('/add/:id/:value', function(req, res, next) {
